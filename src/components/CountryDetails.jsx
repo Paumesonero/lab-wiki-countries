@@ -21,28 +21,34 @@ export default function CountryDetails() {
   }, [countryCode]);
 
   return (
-    <div>
+    <div >
       {country && (
-        <div>
+        <div className='details-container'>
           <img src={`https://flagpedia.net/data/flags/icon/72x54/${country.alpha2Code.toLowerCase()}.png`} alt='' width='50px' />
+          <h2>{country.name.common}</h2>
           <p>Capital: {country.capital}</p>
           <p>Area: {country.area}</p>
-          <p>Borders:</p>
-          {country.borders.map(el => {
-            return (
-              <ul>
-                <li><Link to={`/${el}`}>{el}</Link></li>
-              </ul>
-            )
+          <div>
+            <p>Borders:</p>
+            {country.borders.map(el => {
+              console.log(el)
+              return (
+
+                < ul key={el} >
+                  <li><Link to={`/${el}`}>{el}</Link></li>
+                </ul>
+              )
 
 
 
-          })}
+            })}
+          </div>
 
         </div>
-      )}
+      )
+      }
       {!country && <p>Country not found</p>}
 
-    </div>
+    </div >
   )
 }

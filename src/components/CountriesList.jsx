@@ -5,8 +5,7 @@ export default function CountriesList(props) {
   // console.log(info)
 
   return (
-    <div>
-      <h1>hello</h1>
+    <div className='list-container'>
       {info.map(el => {
         return (
           <ul key={el.alpha3Code}>

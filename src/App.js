@@ -28,7 +28,7 @@ function App() {
     <div className="App">
       <Navbar />
       <div>
-        <div>
+        <div className='main-container'>
           <CountriesList info={country} />
           <Routes>
             <Route path='/:countryCode' element={<CountryDetails />} />

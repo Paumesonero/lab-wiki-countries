@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 export default function CountriesList(props) {
   const { info } = props
@@ -10,7 +10,10 @@ export default function CountriesList(props) {
       {info.map(el => {
         return (
           <ul key={el.alpha3Code}>
-            <li ><Link to={`${el.alpha3Code}`}>{el.name.common}</Link></li>
+            <li >
+              <img src={`https://flagpedia.net/data/flags/icon/72x54/${el.alpha2Code.toLowerCase()}.png`} alt='' width='50px' />
+              <Link to={`${el.alpha3Code}`}>{el.name.common}</Link>
+            </li>
           </ul>
         )
       })}

@@ -8,8 +8,8 @@ import CountriesData from './countries.json';
 import { useEffect, useState } from 'react';
 function App() {
   const [countries, setCountries] = useState(CountriesData)
-  const [country, setCountry] = useState(null)
-
+  const [country, setCountry] = useState([])
+  console.log(country)
 
   useEffect(() => {
     const data = async () => {
@@ -29,7 +29,7 @@ function App() {
       <Navbar />
       <div>
         <div>
-          <CountriesList info={countries} />
+          <CountriesList info={country} />
           <Routes>
             <Route path='/:countryCode' element={<CountryDetails />} />
           </Routes>
